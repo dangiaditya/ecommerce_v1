@@ -9,14 +9,16 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'categories'
-    
+
     def __str__(self) -> str:
         return self.name
 
 
 class Product(models.Model):
-    category = models.ForeignKey(Category, related_name='product', on_delete=models.CASCADE)
-    created_by = models.ForeignKey(User, related_name='product_creator', on_delete=models.CASCADE)
+    category = models.ForeignKey(
+        Category, related_name='product', on_delete=models.CASCADE)
+    created_by = models.ForeignKey(
+        User, related_name='product_creator', on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255, default='admin')
     description = models.TextField(blank=True)
@@ -31,7 +33,6 @@ class Product(models.Model):
     class Meta:
         verbose_name_plural = 'Products'
         ordering = ('-created',)
-
 
     def __str__(self) -> str:
         return self.title
