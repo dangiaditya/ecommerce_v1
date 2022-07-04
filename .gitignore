@@ -296,5 +296,8 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/python,django,windows,linux
 
-test.py
+local_test.py
 .vscode
+imp_cmds
+.coverage
+htmlcov
