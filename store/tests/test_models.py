@@ -55,7 +55,7 @@ class TestProductsModel(TestCase):
         """
         data = self.data1
         url = reverse('store:product_detail', args=[data.slug])
-        self.assertEqual(url, '/item/django-beginners/')
+        self.assertEqual(url, '/item/django-beginners')
         response = self.client.post(
             reverse('store:product_detail', args=[data.slug]))
         self.assertEqual(response.status_code, 200)
@@ -64,5 +64,5 @@ class TestProductsModel(TestCase):
         """
         Test product model custom manager returns only active products
         """
-        data = Product.products.all()
-        self.assertEqual(data.count(), 1)
+        data = Product.objects.all()
+        self.assertEqual(data.count(), 2)

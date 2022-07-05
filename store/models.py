@@ -13,7 +13,7 @@ class Category(models.Model):
     
     def get_absolute_url(self):
         return reverse(
-            "store:category_detail", args=[self.slug])
+            "store:category_list", args=[self.slug])
         #    app_name:url_name -> viewname 
 
     def __str__(self) -> str:
