@@ -44,7 +44,7 @@ class TestBasketView(TestCase):
         """
         response = self.client.post(
             reverse('basket:basket_delete'), {"productid": 2, "action": "post"}, xhr=True)
-        self.assertEqual(response.json(), {'qty': 1, 'subtotal': '20.00'})
+        self.assertEqual(response.json(), {'qty': 1, 'subtotal': 20.00})
 
     def test_basket_update(self):
         """
@@ -52,4 +52,4 @@ class TestBasketView(TestCase):
         """
         response = self.client.post(
             reverse('basket:basket_update'), {"productid": 2, "productqty": 1, "action": "post"}, xhr=True)
-        self.assertEqual(response.json(), {'qty': 2, 'subtotal': '40.00'})
+        self.assertEqual(response.json(), {'qty': 2, 'subtotal': 40.00})
